@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyres by Size - Waheed Tyres & Rims</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .btn-primary {
+            background-color: green;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: darkgreen;
+            transform: translateY(-2px);
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background-color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: green;
+        }
+
+        .navbar {
+            background: linear-gradient(to right, green, white);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo {
+            width: 130px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .main-name {
+            font-weight: 600;
+            font-size: 24px;
+            color: #000;
+        }
+
+        .navbar-nav .nav-link {
+            color: #000;
+            font-weight: 600;
+            padding: 10px 15px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: green;
+        }
+
+        .call-info {
+            text-align: right;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('tyres-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: -40px auto 40px;
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+        }
+
+        .filter-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: green;
+            font-weight: 600;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .filter-group {
+            margin-bottom: 15px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .size-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .size-btn {
+            padding: 12px 25px;
+            background-color: #f1f1f1;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .size-btn:hover,
+        .size-btn.active {
+            background-color: green;
+            color: white;
+            border-color: green;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-badges {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .badge {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-new {
+            background-color: green;
+            color: white;
+        }
+
+        .badge-imported {
+            background-color: #ff9900;
+            color: white;
+        }
+
+        .badge-grade-a {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .badge-grade-b {
+            background-color: #663300;
+            color: white;
+        }
+
+        .badge-used {
+            background-color: #666;
+            color: white;
+        }
+
+        .badge-model {
+            background-color: #990099;
+            color: white;
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product-image img {
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-brand {
+            color: green;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .product-sizes {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .size-main {
+            background-color: green;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .size-secondary {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .product-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+        }
+
+        .detail-item i {
+            color: green;
+        }
+
+        .product-origin {
+            background-color: #f9f9f9;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-weight: 700;
+            font-size: 22px;
+            color: green;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .action-btn {
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .view-btn {
+            background-color: #f1f1f1;
+            color: #333;
+            border: none;
+        }
+
+        .view-btn:hover {
+            background-color: #ddd;
+        }
+
+        .buy-btn {
+            background-color: green;
+            color: white;
+            border: none;
+        }
+
+        .buy-btn:hover {
+            background-color: darkgreen;
+        }
+
+        /* No Products Message */
+        .no-products {
+            text-align: center;
+            padding: 60px 20px;
+            grid-column: 1 / -1;
+        }
+
+        .no-products i {
+            font-size: 60px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .no-products h3 {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-heading {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .main-name {
+                font-size: 20px;
+            }
+
+            .header-logo {
+                width: 100px;
+                height: 60px;
+            }
+
+            .filter-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .page-header {
+                padding: 60px 0;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .size-filters {
+                gap: 10px;
+            }
+
+            .size-btn {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .filter-section {
+                padding: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .main-name {
+                font-size: 18px;
+                margin-top: 5px;
+            }
+
+            .call-info {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .size-btn {
+                padding: 8px 12px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-details {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- 
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    HTML BASE START
+    
+    
+    
+    
+    
+    
+    
+    
+    -->
+
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div>Working Hours Saturday to Thursday (10:00am to 07:00pm), Friday is Off</div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="main-logo.png" alt="Waheed Tyres & Rims" class="header-logo">
+                <span class="main-name">WAHEED TYRES & RIMS</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="tyres.html">Tyres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rims.html">Rims</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="call-info">
+                    <div>Call Us On</div>
+                    <div>+923332901222</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Premium Quality Tyres</h1>
+            <p>Browse our extensive collection of tyres by size, brand, and model year</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <div class="container">
+        <div class="filter-section">
+            <h2 class="filter-title">Find Your Perfect Tyres</h2>
+
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="sizeFilter">Filter by Size</label>
+                    <select id="sizeFilter" class="filter-select">
+                        <option value="all">All Sizes</option>
+                        <option value="13">12 inch</option>
+                        <option value="13">13 inch</option>
+                        <option value="14">14 inch</option>
+                        <option value="15">15 inch</option>
+                        <option value="16">16 inch</option>
+                        <option value="17">17 inch</option>
+                        <option value="18">18 inch</option>
+                        <option value="19">19 inch</option>
+                        <option value="20">20 inch</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="brandFilter">Filter by Brand</label>
+                    <select id="brandFilter" class="filter-select">
+                        <option value="all">All Brands</option>
+                        <option value="Bridgestone">Bridgestone</option>
+                        <option value="Michelin">Michelin</option>
+                        <option value="Goodyear">Goodyear</option>
+                        <option value="Dunlop">Dunlop</option>
+                        <option value="Pirelli">Pirelli</option>
+                        <option value="Yokohama">Yokohama</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="modelFilter">Filter by Model Year</label>
+                    <select id="modelFilter" class="filter-select">
+                        <option value="all">All Years</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2021">2020</option>
+                        <option value="2021">2019</option>
+                        <option value="2021">2018</option>
+                        <option value="2021">2017</option>
+                        <option value="2021">2016</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="conditionFilter">Filter by Condition</label>
+                    <select id="conditionFilter" class="filter-select">
+                        <option value="all">All Conditions</option>
+                        <option value="New">New</option>
+                        <option value="Used">Used</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="size-filters">
+                <button class="size-btn active" data-size="all">All Sizes</button>
+                <button class="size-btn" data-size="13">12"</button>
+                <button class="size-btn" data-size="13">13"</button>
+                <button class="size-btn" data-size="14">14"</button>
+                <button class="size-btn" data-size="15">15"</button>
+                <button class="size-btn" data-size="16">16"</button>
+                <button class="size-btn" data-size="17">17"</button>
+                <button class="size-btn" data-size="18">18"</button>
+                <button class="size-btn" data-size="19">19"</button>
+                <button class="size-btn" data-size="20">20"</button>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsContainer">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">
+                        <img src="main-logo.png" alt="Waheed Tyres & Rims" style="max-width: 150px;">
+                    </div>
+                    <p>Waheed Tyres is the largest dealer of imported tires and alloy rims in Pakistan. Branded Tires
+                        and Alloy Rims will make your car look Graceful. Free delivery all across Pakistan!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tyres.html">Tyres</a></li>
+                        <li><a href="rims.html">Rims</a></li>
+                        <li><a href="#">Brands</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +923332901222</li>
+                        <li><i class="fas fa-envelope"></i> info@waheedtyres.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Peshawar, KPK, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                Waheed Tyres & Rims © 2025 All Rights Reserved. Developed by Muhammad Muzammil
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+
+
+        // Sample tyre data with model years
+        let tyres = [
+            {
+                id: 1,
+                name: "Sport Performance",
+                brand: "Bridgestone",
+                size: 16,
+                secondarySize: "205/55R16",
+                isImported: true,
+                grade: "A",
+                condition: "New",
+                origin: "Japan",
+                modelYear: 2025,
+                price: 18500,
+                description: "High-performance tyres for excellent handling and wet traction."
+            },
+            {
+                id: 2,
+                name: "Turanza Comfort",
+                brand: "Bridgestone",
+                size: 15,
+                secondarySize: "195/65R15",
+                isImported: true,
+                grade: "A",
+                condition: "New",
+                origin: "Japan",
+                modelYear: 2024,
+                price: 16500,
+                description: "Premium comfort tyres with low noise and smooth ride."
+            },
+            {
+                id: 3,
+                name: "Dueler SUV",
+                brand: "Bridgestone",
+                size: 18,
+                secondarySize: "265/60R18",
+                isImported: false,
+                grade: "A",
+                condition: "New",
+                origin: "Thailand",
+                modelYear: 2025,
+                price: 24500,
+                description: "All-terrain SUV tyres with excellent durability and off-road capability."
+            },
+            {
+                id: 4,
+                name: "Ecopia Eco",
+                brand: "Bridgestone",
+                size: 14,
+                secondarySize: "175/65R14",
+                isImported: false,
+                grade: "B",
+                condition: "New",
+                origin: "China",
+                modelYear: 2023,
+                price: 9500,
+                description: "Fuel-efficient tyres with reduced rolling resistance."
+            },
+            {
+                id: 5,
+                name: "Potenza Sport",
+                brand: "Bridgestone",
+                size: 17,
+                secondarySize: "225/45R17",
+                isImported: true,
+                grade: "A",
+                condition: "Used",
+                origin: "Germany",
+                modelYear: 2022,
+                price: 12500,
+                description: "High-performance sport tyres with excellent grip and cornering stability."
+            },
+            {
+                id: 6,
+                name: "Blizzak Winter",
+                brand: "Bridgestone",
+                size: 16,
+                secondarySize: "205/55R16",
+                isImported: true,
+                grade: "A",
+                condition: "New",
+                origin: "Japan",
+                modelYear: 2024,
+                price: 21500,
+                description: "Winter tyres with exceptional snow and ice traction."
+            },
+            {
+                id: 7,
+                name: "DriveGuard Run-Flat",
+                brand: "Bridgestone",
+                size: 17,
+                secondarySize: "225/50R17",
+                isImported: true,
+                grade: "A",
+                condition: "New",
+                origin: "USA",
+                modelYear: 2025,
+                price: 27500,
+                description: "Run-flat tyres that allow continued driving even after a puncture."
+            },
+            {
+                id: 8,
+                name: "Turanza T005",
+                brand: "Bridgestone",
+                size: 15,
+                secondarySize: "195/65R15",
+                isImported: false,
+                grade: "B",
+                condition: "Used",
+                origin: "Thailand",
+                modelYear: 2021,
+                price: 8500,
+                description: "Touring tyres with balanced performance and comfort."
+            },
+            {
+                id: 9,
+                name: "Weather Control",
+                brand: "Bridgestone",
+                size: 16,
+                secondarySize: "205/55R16",
+                isImported: true,
+                grade: "A",
+                condition: "New",
+                origin: "Japan",
+                modelYear: 2025,
+                price: 19500,
+                description: "All-weather tyres designed for year-round performance."
+            },
+            {
+                id: 10,
+                name: "Pilot Sport 4",
+                brand: "Michelin",
+                size: 18,
+                secondarySize: "235/50R18",
+                isImported: true,
+                grade: "A",
+                condition: "New",
+                origin: "France",
+                modelYear: 2025,
+                price: 29500,
+                description: "Ultra-high-performance tyres for sports cars and premium vehicles."
+            },
+            {
+                id: 11,
+                name: "Energy Saver",
+                brand: "Michelin",
+                size: 15,
+                secondarySize: "185/65R15",
+                isImported: true,
+                grade: "A",
+                condition: "New",
+                origin: "France",
+                modelYear: 2024,
+                price: 14500,
+                description: "Fuel-saving tyres with low rolling resistance for better economy."
+            },
+            {
+                id: 12,
+                name: "Primacy 4",
+                brand: "Michelin",
+                size: 16,
+                secondarySize: "205/55R16",
+                isImported: true,
+                grade: "A",
+                condition: "New",
+                origin: "France",
+                modelYear: 2023,
+                price: 17500,
+                description: "Touring tyres with excellent wet grip and longevity."
+            },
+            {
+                id: 13,
+                name: "Primacy 4",
+                brand: "Michelin",
+                size: 20,
+                secondarySize: "205/55R16",
+                isImported: true,
+                grade: "B",
+                condition: "OLD",
+                origin: "Italy",
+                modelYear: 2023,
+                price: 17500,
+                description: "Touring tyres with excellent wet grip and longevity."
+            }
+
+
+        ];
+
+        // DOM elements
+        const sizeFilters = document.querySelectorAll('.size-btn');
+        const productsContainer = document.getElementById('productsContainer');
+        const sizeFilter = document.getElementById('sizeFilter');
+        const brandFilter = document.getElementById('brandFilter');
+        const modelFilter = document.getElementById('modelFilter');
+        const conditionFilter = document.getElementById('conditionFilter');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            displayTyres('all', 'all', 'all', 'all');
+            setupEventListeners();
+        });
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Size filter buttons
+            sizeFilters.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    sizeFilters.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    // Update the select filter
+                    sizeFilter.value = this.getAttribute('data-size');
+                    // Filter tyres
+                    applyFilters();
+                });
+            });
+
+            // Select filters
+            sizeFilter.addEventListener('change', applyFilters);
+            brandFilter.addEventListener('change', applyFilters);
+            modelFilter.addEventListener('change', applyFilters);
+            conditionFilter.addEventListener('change', applyFilters);
+        }
+
+        // Apply all filters
+        function applyFilters() {
+            const size = sizeFilter.value;
+            const brand = brandFilter.value;
+            const modelYear = modelFilter.value;
+            const condition = conditionFilter.value;
+
+            displayTyres(size, brand, modelYear, condition);
+        }
+
+        // Display tyres based on selected filters
+        function displayTyres(size, brand, modelYear, condition) {
+            // Clear the products container
+            productsContainer.innerHTML = '';
+
+            // Filter tyres based on criteria
+            let filteredTyres = tyres;
+
+            if (size !== 'all') {
+                filteredTyres = filteredTyres.filter(tyre => tyre.size === parseInt(size));
+            }
+
+            if (brand !== 'all') {
+                filteredTyres = filteredTyres.filter(tyre => tyre.brand === brand);
+            }
+
+            if (modelYear !== 'all') {
+                filteredTyres = filteredTyres.filter(tyre => tyre.modelYear === parseInt(modelYear));
+            }
+
+            if (condition !== 'all') {
+                filteredTyres = filteredTyres.filter(tyre => tyre.condition === condition);
+            }
+
+            // Check if there are tyres to display
+            if (filteredTyres.length === 0) {
+                productsContainer.innerHTML = `
+                    <div class="no-products">
+                        <i class="fas fa-search"></i>
+                        <h3>No tyres found matching your criteria</h3>
+                        <p>Please try different filters or check back later</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Display the filtered tyres
+            filteredTyres.forEach(tyre => {
+                const tyreCard = document.createElement('div');
+                tyreCard.className = 'product-card';
+
+                // Generate badges based on tyre properties
+
+
+                let badgesHtml = '';
+
+
+                if (tyre.condition === "New") {
+                    badgesHtml += `<span class="badge badge-new">NEW</span>`;
+                } else {
+                    badgesHtml += `<span class="badge badge-used">USED</span>`;
+                }
+
+                // if (tyre.isImported) {
+                //     badgesHtml += `<span class="badge badge-imported">IMPORTED</span>`;
+                // }
+
+                // if (tyre.grade === "A") {
+                //     badgesHtml += `<span class="badge badge-grade-a">A-GRADE</span>`;
+                // } else{
+                //     badgesHtml += `<span class="badge badge-grade-b">B-GRADE</span>`;
+                // }
+
+                // badgesHtml += `<span class="badge badge-model">MODEL ${tyre.modelYear}</span>`;
+
+                tyreCard.innerHTML = `
+                    <div class="product-badges">
+                        ${badgesHtml}
+                    </div>
+                    <div class="product-image">
+                        <img src="tyre-${tyre.id}.jpg" alt="${tyre.brand} ${tyre.name}" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22280%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20280%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1806c43c4ff%20text%20%7B%20fill%3A%23999%3Bfont-weight%3Anormal%3Bfont-family%3Avar(--bs-font-sans-serif)%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1806c43c4ff%22%3E%3Crect%20width%3D%22280%22%20height%3D%22200%22%20fill%3D%22%23373940%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22104.5%22%20y%3D%22106.5%22%3ETyre%20Image%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${tyre.name}</h3>
+                        <div class="product-brand">${tyre.brand}</div>
+                        
+                        <div class="product-sizes">
+                            <span class="size-main">${tyre.size}"</span>
+                            <span class="size-secondary">${tyre.secondarySize}</span>
+                        </div>
+                        
+                        <div class="product-details">
+                            <div class="detail-item">
+                                <i class="fas fa-shipping-fast"></i>
+                                <span>${tyre.isImported ? 'Imported' : 'Local'}</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>${tyre.grade}-Grade</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-tag"></i>
+                                <span>${tyre.condition}</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Model ${tyre.modelYear}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-origin">
+                            <i class="fas fa-globe"></i> Manufactured in ${tyre.origin}
+                        </div>
+                        
+                        <div class="product-price">PKR ${tyre.price.toLocaleString()}</div>
+                        
+                        <div class="product-actions">
+                        </div>
+                    </div>
+                `;
+                productsContainer.appendChild(tyreCard);
+            });
+        }
+    </script>
+</body>
+
+</html>
