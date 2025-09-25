@@ -299,10 +299,11 @@
             justify-content: center;
             padding: 20px;
         }
-
+        
         .product-image img {
+            width: 70%;
             max-height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         .product-info {
@@ -602,9 +603,8 @@
             <div class="top-bar-content">
                 <div>Working Hours Saturday to Thursday (10:00am to 07:00pm), Friday is Off</div>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/nafeesjan64/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61580860396956"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
         </div>
@@ -625,20 +625,20 @@
 
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                         <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="tyres.html">Tyres</a>
+                        <a class="nav-link" href="tyres.html">Tyres</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="rims.html">Rims</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Brands</a>
+                        <a class="nav-link" href="index.html#brands-section">Brands</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="index.html#contact-section">Contact Us</a>
                     </li>
                 </ul>
                 <div class="call-info">
@@ -689,6 +689,11 @@
                         <option value="Dunlop">Dunlop</option>
                         <option value="Pirelli">Pirelli</option>
                         <option value="Yokohama">Yokohama</option>
+                        <option value="Habilead">Habilead</option>
+                        <option value="Sonix">Sonix</option>
+                        <option value="Yomar">Yomar</option>
+                        <option value="Fireland">Fireland</option>
+                        <option value="Joyroad">Joyroad</option>
                     </select>
                 </div>
 
@@ -739,9 +744,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container" >
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">
@@ -750,20 +754,29 @@
                     <p>Waheed Tyres is the largest dealer of imported tires and alloy rims in Pakistan. Branded Tires
                         and Alloy Rims will make your car look Graceful. Free delivery all across Pakistan!</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/nafeesjan64/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=61580860396956"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
 
                 <div>
                     <h3 class="footer-heading">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="tyres.html">Tyres</a></li>
-                        <li><a href="rims.html">Rims</a></li>
-                        <li><a href="#">Brands</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                       <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tyres.html">Tyres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rims.html">Rims</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#brands-section">Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-section">Contact Us</a>
+                    </li>
                     </ul>
                 </div>
 
@@ -783,6 +796,7 @@
         </div>
     </footer>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
 
@@ -791,188 +805,75 @@
         // Sample tyre data with model years
         let tyres = [
             {
-                id: 1,
-                name: "Sport Performance",
-                brand: "Bridgestone",
-                size: 16,
-                secondarySize: "205/55R16",
+                id:1,
+                name: "Road Tour 666",
+                brand: "Sonix",
+                size: 12,
+                secondarySize: "165/70R12",
                 isImported: true,
                 grade: "A",
-                condition: "New",
-                origin: "Japan",
-                modelYear: 2025,
-                price: 18500,
-                description: "High-performance tyres for excellent handling and wet traction."
-            },
-            {
-                id: 2,
-                name: "Turanza Comfort",
-                brand: "Bridgestone",
-                size: 15,
-                secondarySize: "195/65R15",
-                isImported: true,
-                grade: "A",
-                condition: "New",
-                origin: "Japan",
-                modelYear: 2024,
-                price: 16500,
-                description: "Premium comfort tyres with low noise and smooth ride."
-            },
-            {
-                id: 3,
-                name: "Dueler SUV",
-                brand: "Bridgestone",
-                size: 18,
-                secondarySize: "265/60R18",
-                isImported: false,
-                grade: "A",
-                condition: "New",
-                origin: "Thailand",
-                modelYear: 2025,
-                price: 24500,
-                description: "All-terrain SUV tyres with excellent durability and off-road capability."
-            },
-            {
-                id: 4,
-                name: "Ecopia Eco",
-                brand: "Bridgestone",
-                size: 14,
-                secondarySize: "175/65R14",
-                isImported: false,
-                grade: "B",
                 condition: "New",
                 origin: "China",
-                modelYear: 2023,
-                price: 9500,
-                description: "Fuel-efficient tyres with reduced rolling resistance."
-            },
-            {
-                id: 5,
-                name: "Potenza Sport",
-                brand: "Bridgestone",
-                size: 17,
-                secondarySize: "225/45R17",
-                isImported: true,
-                grade: "A",
-                condition: "Used",
-                origin: "Germany",
-                modelYear: 2022,
-                price: 12500,
-                description: "High-performance sport tyres with excellent grip and cornering stability."
-            },
-            {
-                id: 6,
-                name: "Blizzak Winter",
-                brand: "Bridgestone",
-                size: 16,
-                secondarySize: "205/55R16",
-                isImported: true,
-                grade: "A",
-                condition: "New",
-                origin: "Japan",
-                modelYear: 2024,
-                price: 21500,
-                description: "Winter tyres with exceptional snow and ice traction."
-            },
-            {
-                id: 7,
-                name: "DriveGuard Run-Flat",
-                brand: "Bridgestone",
-                size: 17,
-                secondarySize: "225/50R17",
-                isImported: true,
-                grade: "A",
-                condition: "New",
-                origin: "USA",
                 modelYear: 2025,
-                price: 27500,
-                description: "Run-flat tyres that allow continued driving even after a puncture."
+                price: 9500,
+                description: "soft tyre, white letter and strong grip"
             },
             {
-                id: 8,
-                name: "Turanza T005",
-                brand: "Bridgestone",
+                id:2,
+                name: "SkyRace PO3",
+                brand: "Yomar",
                 size: 15,
                 secondarySize: "195/65R15",
-                isImported: false,
-                grade: "B",
-                condition: "Used",
-                origin: "Thailand",
-                modelYear: 2021,
-                price: 8500,
-                description: "Touring tyres with balanced performance and comfort."
+                isImported: true,
+                grade: "A",
+                condition: "New",
+                origin: "China",
+                modelYear: 2025,
+                price: 14000,
+                description: ""
             },
             {
-                id: 9,
-                name: "Weather Control",
-                brand: "Bridgestone",
-                size: 16,
-                secondarySize: "205/55R16",
+                id:3,
+                name: "Blue Earth E50",
+                brand: "Yokohama",
+                size: 15,
+                secondarySize: "195/65R15",
                 isImported: true,
                 grade: "A",
                 condition: "New",
                 origin: "Japan",
-                modelYear: 2025,
-                price: 19500,
-                description: "All-weather tyres designed for year-round performance."
-            },
-            {
-                id: 10,
-                name: "Pilot Sport 4",
-                brand: "Michelin",
-                size: 18,
-                secondarySize: "235/50R18",
-                isImported: true,
-                grade: "A",
-                condition: "New",
-                origin: "France",
-                modelYear: 2025,
-                price: 29500,
-                description: "Ultra-high-performance tyres for sports cars and premium vehicles."
-            },
-            {
-                id: 11,
-                name: "Energy Saver",
-                brand: "Michelin",
-                size: 15,
-                secondarySize: "185/65R15",
-                isImported: true,
-                grade: "A",
-                condition: "New",
-                origin: "France",
-                modelYear: 2024,
-                price: 14500,
-                description: "Fuel-saving tyres with low rolling resistance for better economy."
-            },
-            {
-                id: 12,
-                name: "Primacy 4",
-                brand: "Michelin",
-                size: 16,
-                secondarySize: "205/55R16",
-                isImported: true,
-                grade: "A",
-                condition: "New",
-                origin: "France",
                 modelYear: 2023,
-                price: 17500,
-                description: "Touring tyres with excellent wet grip and longevity."
+                price: 22000,
+                description: ""
             },
             {
-                id: 13,
-                name: "Primacy 4",
-                brand: "Michelin",
-                size: 20,
-                secondarySize: "205/55R16",
+                id:4,
+                name: "",
+                brand: "Joyroad",
+                size: 13,
+                secondarySize: "165/65R13",
                 isImported: true,
-                grade: "B",
-                condition: "OLD",
-                origin: "Italy",
-                modelYear: 2023,
-                price: 17500,
-                description: "Touring tyres with excellent wet grip and longevity."
-            }
-
+                grade: "A",
+                condition: "New",
+                origin: "China",
+                modelYear: 2025,
+                price: 10000,
+                description: ""
+            },
+            {
+                id:5,
+                name: "Power 11",
+                brand: "Fireland",
+                size: 12,
+                secondarySize: "155/70R12",
+                isImported: true,
+                grade: "A",
+                condition: "New",
+                origin: "China",
+                modelYear: 2025,
+                price: 9750,
+                description: ""
+            },
 
         ];
 
@@ -1093,7 +994,7 @@
                         ${badgesHtml}
                     </div>
                     <div class="product-image">
-                        <img src="tyre-${tyre.id}.jpg" alt="${tyre.brand} ${tyre.name}" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22280%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20280%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1806c43c4ff%20text%20%7B%20fill%3A%23999%3Bfont-weight%3Anormal%3Bfont-family%3Avar(--bs-font-sans-serif)%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1806c43c4ff%22%3E%3Crect%20width%3D%22280%22%20height%3D%22200%22%20fill%3D%22%23373940%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22104.5%22%20y%3D%22106.5%22%3ETyre%20Image%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E'">
+                        <img src="tyre-${tyre.id}.jpg" alt="${tyre.brand} ${tyre.name}">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">${tyre.name}</h3>
