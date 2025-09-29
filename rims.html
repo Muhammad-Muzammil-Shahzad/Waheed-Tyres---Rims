@@ -542,12 +542,10 @@
             <h2 class="filter-title">Filter Rims by Size</h2>
             <div class="size-filters">
                 <button class="size-btn active" data-size="all">All Sizes</button>
-                <button class="size-btn" data-size="12">12 inch</button>
-                <button class="size-btn" data-size="13">13 inch</button>
-                <button class="size-btn" data-size="14">14 inch</button>
                 <button class="size-btn" data-size="15">15 inch</button>
                 <button class="size-btn" data-size="16">16 inch</button>
                 <button class="size-btn" data-size="17">17 inch</button>
+                <button class="size-btn" data-size="18">18 inch</button>
             </div>
         </div>
 
@@ -612,15 +610,134 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Sample product data (in a real application, this would come from a database)
         let products = [
             {
                 id: 1,
-                name: "Sport Alloy Rims",
-                brand: "BBS",
+                name: "Toyota Grandy",
+                brand: "Toyota",
+                size: 15,
+                price: 60000,
+                description: "Genuuine Rim 5 Nuts 100 PCD."
+            },
+            {
+                id: 2,
+                name: "Original China Rim",
+                brand: "China Brand",
+                size: 15,
+                price: 58000,
+                description: "china manufactured rim in Genuin condition, 5 nuts 100 PCD."
+            },
+            {
+                id: 3,
+                name: "Toyota Prius",
+                brand: "Toyota",
+                size: 15,
+                price: 45000,
+                description: "original Condition Rim 5 Nuts 100 PCD"
+            },
+            {
+                id: 4,
+                name: "Original China Rim",
+                brand: "China Brand",
+                size: 15,
+                price: 65000,
+                description: "5 Nuts 100 PCD original condition China Manufactured Rims"
+            },
+            {
+                id: 5,
+                name: "Original China Rim",
+                brand: "China Brand",
+                size: 15,
+                price: 105000,
+                description: "Original china 4 nut universal new Condtion 15X8JJ."
+            },
+            {
+                id: 6,
+                name: "Original Toyota",
+                brand: "Toyota",
+                size: 15,
+                price: 80000,
+                description: "Original toyota Rim 4 nuts 100 PCD genuine Condition"
+            },
+            {
+                id: 7,
+                name: "Japan Rim",
+                brand: "Japan Brand",
+                size: 18,
+                price: 65000,
+                description: "150 PCD, -12JJ, 5 nuts genuine Condition Japan Manufactured Rim"
+            },
+            {
+                id: 8,
+                name: "Jeep Collection",
+                brand: "China Brand",
+                size: 15,
+                price: 120000,
+                description: "6 nuts Jeep Collection Rim in new Condition, China manufactured"
+            },
+            {
+                id: 9,
+                name: "Genuine Japan Rim",
+                brand: "Japan Brand",
                 size: 17,
-                price: 28500,
-                description: "Premium lightweight alloy rims for enhanced performance and style."
+                price: 85000,
+                description: "Japan Rim 150 PCD, -12JJ In Genuine Condition"
+            },
+            {
+                id: 10,
+                name: "Suzuki Alto Rim",
+                brand: "Suzuki",
+                size: 15,
+                price: 60000,
+                description: "Genuine Condition Rim 4 nuts, 4.5 inch and 100 PCD, Japan Manufactured"
+            },
+            {
+                id: 11,
+                name: "Toyota Aqua",
+                brand: "Toyota",
+                size: 16,
+                price: 60000,
+                description: "genuine Condition Rim 4 nut, 100 PCD"
+            },
+            {
+                id: 12,
+                name: "Honda Oreil",
+                brand: "Honda",
+                size: 15,
+                price: 50000,
+                description: "4 nut, 100 PCD Rim in Genuine Condition"
+            },
+            {
+                id: 13,
+                name: "Suzuki Alto",
+                brand: "Suzuki",
+                size: 15,
+                price: 55000,
+                description: "4 Nuts, 100PCD Original Condition Rim"
+            },
+            {
+                id: 14,
+                name: "Honda Wizel",
+                brand: "Honda",
+                size: 16,
+                price: 60000,
+                description: "114 PCD, 5 Nuts rim In genuine Condition"
+            },
+            {
+                id: 15,
+                name: "Honda Thailand",
+                brand: "Thailand",
+                size: 15,
+                price: 75000,
+                description: "4 Nuts, 100 PCD Rim Manufactured In Thailand"
+            },
+            {
+                id: 16,
+                name: "Toyota Altas",
+                brand: "Toyota",
+                size: 15,
+                price: 60000,
+                description: "5 nuts, 100 PCD Rim in Genuine Condition."
             },
 
         ];
